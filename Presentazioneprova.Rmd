@@ -1,0 +1,150 @@
+---
+title: "Chicken revolution"
+author: "Alessandra Carella"
+date: "2024-03-13"
+output:     
+  ioslides_presentation:
+    css: css/mycss.css  
+    logo: images/aia.png
+  widescreen: yes
+#knit: pagedown::chrome_print
+---
+
+
+```{css, echo=F}
+pre {
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+pre[class] {
+  max-height: 500px;
+}
+
+.scroll-100 {
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+```
+
+
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+.myClass {font-size: 14px;}
+</style>
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Una sezione di colore unipd
+## Introduction to the Chicken Theory (1302) 
+
+## How the chicken was born
+
+```{r, fig.cap = "The famous dead chicken", fig.align="center", out.width="50%"}
+knitr::include_graphics(path = "images/pollo.jpeg")
+```
+
+## Una slide con testo piccolo
+<font size="2">Testo piccolo</font>
+
+## Una slide con testo colorato 
+<span style="color:red">Piccolo piccolo pollo</span>
+<img width="10%" height="10%" src="images/pollo.jpeg
+">
+
+
+## Slide con contenuti incrementali {.build}
+Contenuto 1
+
+Contenuto 2
+
+Contenuto 3
+
+## Slide con 2 Colonne e contenuti incrementali {.build .columns-2}
+Qui di seguito riportiamo un contenuto esplicativo dell'essenza più profonda del pollo senza vita 
+
+```{r, fig.cap = " ", fig.align="left", out.width="50%"}
+knitr::include_graphics(path = "images/pollo.jpeg")
+```
+
+<p class="forceBreak"></p>
+
+Testo nella seconda colonna 
+
+Testo nella seconda colonna 
+
+## Slide con testo fuori dalle colonne
+Testo fuori dalle colonne
+
+<div style="float: left; width: 50%; text-align: right;">
+
+Testo colonna sinistra con allinemento a sinistra
+
+</div> 
+
+<div style="float: right; width: 50%; text-align: right;">
+<span style="color:blue">Testo colonna sinistra con allineamento a destra </span>
+
+</div>
+
+
+
+## Scrollo codice 
+```{r class.output="scroll-100", eval=FALSE, echo=TRUE, class.source="myClass"}
+shiny::shinyApp(
+ ui = fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(inputId = "dataset", # nome dell'input per il server
+                  label = "Choose a dataset:", # nome dell'input per lo user
+                  choices = c("rock", "pressure")) # opzioni
+    ),
+
+    mainPanel(
+      plotOutput( #qui voglio un grafico 
+        "graph"   
+      )
+    ) 
+  )
+),
+
+server = function(input, output){
+  output$graph <- renderPlot({
+    if(input$dataset == "rock"){ 
+      data <- rock
+    } else {
+      data <- pressure
+    } 
+    plot(data[, c(1:2)])
+  })
+}, 
+options = list(height = 300)
+)
+
+
+```
+
+## Scrivo codice 
+```{r echo=TRUE, eval=FALSE}
+
+summary(dati)
+mean(chickwts)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+

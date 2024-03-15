@@ -1,0 +1,3 @@
+[2,"\n"]
+[1,"\u001B[31m\n\nprocessing file: quarto.qmd\n\u001B[39m1/9                  \n2/9 [fig-seconda]    \n\u001B[31m\nQuitting from lines 29-36 [fig-seconda] (quarto.qmd)\n\u001B[39m"]
+[1,"\u001B[31mError in `knitr::include_graphics()`:\n! Cannot find the file(s): \"images/aia.png\"\nBacktrace:\n 1. knitr::include_graphics(\"images/aia.png\")\n\u001B[39m\u001B[31mExecution halted\n\u001B[39m"]

@@ -1,0 +1,143 @@
+---
+title: "Imparando ad usare quarto"
+format: 
+  html:
+    code-fold: true
+    toc: true
+    toc-title: Table of content
+    toc-location: left
+    toc-depth: 3 
+    code-tools: 
+      source: true
+      toggle: false
+      caption: Code
+editor: source
+execute: 
+  eval: true
+  echo: true
+  warning: false
+lang: eng
+  
+---
+
+## Prova header 1
+# Immagine metodo 1
+
+
+In @fig-seconda c'è il logo dell'associazione dei polli e anche dell'associazione italiana arbitri
+```{r}
+#| eval: true
+#| fig-cap: "Immagine del pollo"
+#| fig-cap-location: top
+#| out-width: 30%
+#| label: fig-seconda
+#| fig-align: left
+knitr::include_graphics("images/aia.png")
+```
+
+# Immagine metodo 2
+
+![L'immagine del pollo](images/pollo.jpeg){#fig-immagine}
+
+In @fig-immagine c'è una immagine del pollo
+
+# Come inserire una tabella 
+In @tbl-esempio si vede una bellissima tabella 
+```{r}
+#| tbl-cap-location: top
+#| tbl-cap: Una tabella di esempio
+#| tbl-subcap: per far vedere come funzionano
+#| label: tbl-esempio
+
+kableExtra::kable(mtcars[1:6, ])
+```
+
+## Come mettere colonne 
+
+:::: {.columns}
+
+
+::: {.column width="30%"}
+
+Testo nella prima colonna
+
+:::
+
+::: {.column width="30%"}
+
+Testo nella seconda colonna
+
+:::
+
+::: {.column width="30%"}
+
+Testo nella terza colonna
+
+:::
+
+::::
+
+
+
+## Come mettere le griglie 
+::: {.grid}
+
+::: {.g-col-4}
+
+Prima colonna 
+
+:::
+
+::: {.g-col-4}
+
+Seconda colonna
+
+:::
+
+::: {.g-col-4}
+
+Terza colonna
+
+:::
+
+:::
+
+
+
+
+## Come mettere i tabset
+::: {.panel-tabset}
+
+## Introduzione
+
+Lungo testo dell'introduzione
+
+## Materiali e metodi
+
+
+Primo tabset con una tabella contenente il dataset
+
+
+## Grafico
+
+
+Terzo tabset con il grafico dei dati
+
+In @fig-prima c'è una immagine del pollo
+
+```{r}
+#| fig-cap: "Immagine del pollo"
+#| fig-cap-location: top
+#| out-width: 50%
+#| label: fig-prima
+#| fig-align: left
+knitr::include_graphics("images/pollo.jpeg")
+```
+
+:::
+
+```{r}
+
+
+```
+
